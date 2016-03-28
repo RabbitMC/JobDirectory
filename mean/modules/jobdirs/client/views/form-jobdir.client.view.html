@@ -5,6 +5,7 @@
   <div class="col-md-12">
     <form name="vm.form.jobdirForm" class="form-horizontal" ng-submit="vm.save(vm.form.jobdirForm.$valid)" novalidate>
       <fieldset>
+        <!-- Name -->  
         <div class="form-group" show-errors>
           <label class="control-label" for="name">Name</label>
           <input name="name" type="text" ng-model="vm.jobdir.name" id="name" class="form-control" placeholder="Name" required>
@@ -12,6 +13,59 @@
             <p class="help-block error-text" ng-message="required">Jobdir name is required.</p>
           </div>
         </div>
+        <!-- Company -->  
+        <div class="form-group" show-errors>
+          <label class="control-label" for="company">Company</label>
+          <input name="company" type="text" ng-model="vm.jobdir.company" id="company" class="form-control" placeholder="Company Name" required>
+          <div ng-messages="vm.form.jobdirForm.company.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Company name is required.</p>
+          </div>
+        </div>
+        <!-- Description -->  
+        <div class="form-group" show-errors>
+          <label class="control-label" for="description">Description</label>
+          <div class="controls">
+            <textarea name="description" type="text" ng-model="vm.jobdir.description" id="description" class="form-control" placeholder="Job description">
+            
+            </textarea>  
+          </div>    
+        </div>
+        <!-- Requirements -->  
+        <div class="form-group" show-errors>
+          <label class="control-label" for="requirements">Requirements</label>
+          <div class="controls">
+            <textarea name="requirements" type="text" ng-model="vm.jobdir.requirements" id="requirements" class="form-control" placeholder="Job requirements">
+            
+            </textarea>  
+          </div>    
+        </div>
+        <!-- Hourly Wage -->  
+        <div class="form-group">
+          <label class="control-label" for="hourly_wage">Hourly Wage</label>
+          <input name="hourly_wage" type="text" ng-model="vm.jobdir.hourly_wage" id="hourly_wage" class="form-control" placeholder="Hourly Wage">
+        </div>
+        <!-- States -->  
+        <div class="form-group">
+          <label class="control-label" for="state">States</label>
+          <div class="controls">
+            <select name="state" type="text" ng-model="vm.jobdir.state" id="state" class="form-control">
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="CA">California</option>
+                <option value="DC">District of Columbia</option>
+                <option value="FL">Florida</option>
+                <option value="NY">New York</option>
+                <option value="TX">Texas</option>
+            </select> 
+          </div>    
+        </div>  
+          
+        <!-- Contact Email -->  
+        <div class="form-group" show-errors>
+          <label class="control-label" for="contact_email">Contact Email</label>
+          <input name="contact_email" type="text" ng-model="vm.jobdir.contact_email" id="contact_email" class="form-control" placeholder="Contact Email">
+        </div>  
+          
         <div class="form-group">
           <button type="submit" class="btn btn-default">{{vm.jobdir._id ? 'Update' : 'Create'}}</button>
         </div>
